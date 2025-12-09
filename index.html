@@ -17,19 +17,5 @@
         <pre id="textContent">加载中...</pre>
     </div>
 
-    <script>
-        // 异步加载文本内容，路径为自定义的 /api/content
-        fetch('/api/content')
-            .then(response => {
-                if (!response.ok) throw new Error('加载失败');
-                return response.text();
-            })
-            .then(text => {
-                document.getElementById('textContent').textContent = text;
-            })
-            .catch(error => {
-                document.getElementById('textContent').textContent = '加载出错：' + error.message;
-            });
-    </script>
 </body>
 </html>
